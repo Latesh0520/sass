@@ -1,0 +1,67 @@
+@import 'mixin';
+@import 'color';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/*
+Operator
+Variables
+nesting
+mixin
+parameter
+partials
+*/
+
+
+.container{
+    @include container();
+    h1{
+        @include font-size(30);
+        color: $text-color-primary;
+        
+        &:hover{
+            color: $text-color-hover;
+        }
+    }
+    p{
+        @include font-size(16);
+        color: $text-color-primary;
+        &:hover{
+            color: $text-color-hover;
+        }
+    } 
+    .grid{  
+        gap: 15px;  
+        .grid-column{
+            padding: 15px;  
+            border: 1px solid $border_color;
+            // border-color: $border_color;
+        }
+    }
+}
+
+
+@media (max-width:768px) {
+    .container{
+        margin: 50px 0;
+        .grid{
+            @include grid(1);
+        }
+    }
+}
+@media (min-width:768px) {
+    .container{
+        .grid{
+            @include grid(2);
+        }
+    }
+}
+@media (min-width:992px) {
+    .container{
+        .grid{
+            @include grid(3);
+        }
+    }
+}

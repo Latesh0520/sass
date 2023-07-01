@@ -1,0 +1,14 @@
+@mixin container{
+    margin: 50px 100px;
+    text-align: center;
+}
+@mixin font-size($font_size){
+    font-size: ($font_size) + px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+@mixin grid($column_number){
+    display: grid;
+    grid-template-columns: repeat($column_number,1fr);
+    
+}
