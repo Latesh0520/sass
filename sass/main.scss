@@ -40,7 +40,11 @@ partials
             // border-color: $border_color;
         }
     }
+    h3{
+        @extend h1;
+    }
 }
+
 
 
 @media (max-width:768px) {
